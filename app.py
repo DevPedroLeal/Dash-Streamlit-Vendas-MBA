@@ -3,7 +3,7 @@ import streamlit as st
 
 # ------ Dados ------
 # Baixem do Teams esse conjunto de dados!!
-df = pd.read_csv("sales_data.                                                         csv")
+df = pd.read_csv("sales_data.csv")
 df["Date_Sold"] = pd.to_datetime(df["Date_Sold"], errors="coerce")
 df = df.dropna(subset=["Date_Sold"])
 
@@ -44,3 +44,4 @@ with g2:
 st.dataframe(dados, width='stretch')
 st.download_button("Baixar CSV filtrado", dados.to_csv(index=False).encode("utf-8"),
                    "vendas_filtrado.csv", "text/csv")
+
